@@ -37,6 +37,11 @@ class User{
     public function setDt_register($value) {
         $this->dt_register = $value;   
     }
+
+    public function __construct($login ="", $password = ""){
+        $this->setLogin($login);
+        $this->setSenha($password);
+    }
     
     public function setdata($data){
 
@@ -101,9 +106,18 @@ class User{
         }
     }
 
-    public function __construct($login ="", $password = ""){
+    public function update($login, $password){
         $this->setLogin($login);
         $this->setSenha($password);
+
+        $sql = new Sql();
+
+        $sql->executeQuery("UPDATE tb_users SET login = :LOGIN, senha = :PASSWORD WHERE id_user = :ID", array(
+            ':LOGIN'=>$this->getLogin(),
+            ':PASSWORD'=>$this->getSenha(),
+            ':ID'=>$this->getId_user()        
+        ));
+
     }
     
     public function __toString()

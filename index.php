@@ -21,11 +21,17 @@ require_once("config.php");
 //echo $login;
 
 //Com o construtor é dessa forma/ os valores de setlogin e setsenha são passados como parametros no objetos
-$newUser = new User("João", "Joao1234");
+//$newUser = new User("João", "Joao1234");
 
 //Sem o construtor é dessa forma;
 //$newUser->setlogin("Carlos");
 //$newUser->setSenha("12345678");
+//$newUser->insertData();
+//echo $newUser;
 
-$newUser->insertData();
-echo $newUser;
+//Atualizando os dados de um usuário;
+$user = new User();
+$user->getById(6);
+$user->update("Davi", "abcd1234");
+
+echo $user;
