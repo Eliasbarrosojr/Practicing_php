@@ -30,8 +30,7 @@ require_once("config.php");
 //echo $newUser;
 
 //Atualizando os dados de um usuário;
-$user = new User();
-$user->getById(6);
-$user->update("Davi", "abcd1234");
-
-echo $user;
+//$user = new User();
+//$user->getById(6);
+//$user->update("Davi", "abcd1234");
+//echo $user;
