@@ -2,12 +2,20 @@
 
 require_once("config.php");
 
-/* $sql = new Sql();
+/*Traz um user pelo ID*/
+//$db = new User();
+//$db->getById(3);
+//echo $db;
 
-$users = $sql->select("SELECT * FROM tb_users"); */
+/*Traz todos os users*/
+//$list = User::getUsers();
+//echo json_encode($list);
 
-$db = new User();
+//Carrega uma lista de user buscada pelo login
+//$search = User::search("ana");
+//echo json_encode($search);
 
-$db->getById(3);
-
-echo $db;
+//Faz o login do usuário;
+$login = new User;
+$login->login("ana", "12345678");
+echo $login;
