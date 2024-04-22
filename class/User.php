@@ -119,6 +119,19 @@ class User{
         ));
 
     }
+
+    public function delete(){
+        $sql = new Sql();
+
+        $sql->executeQuery("DELETE FROM tb_users WHERE id_user = :ID", array(
+            ':ID'=>$this->getId_user()
+        ));
+
+        $this->setId_user(0);
+        $this->setLogin("");
+        $this->setSenha("");
+        $this->setDt_register(new DateTime());
+    }    
     
     public function __toString()
     {

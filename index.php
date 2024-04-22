@@ -34,3 +34,11 @@ require_once("config.php");
 //$user->getById(6);
 //$user->update("Davi", "abcd1234");
 //echo $user;
+
+//Delete um user;
+$user = new User();
+
+$user->getById(6);
+$user->delete();
+
+echo $user;
